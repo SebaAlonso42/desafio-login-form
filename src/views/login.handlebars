@@ -1,0 +1,23 @@
+<div class="flex flex-col items-center my-10">
+  <h1
+    class="text-3xl bg-black border-2 border-pink-300 rounded-full py-1 px-6"
+  >Login</h1>
+  <form
+    class="flex flex-col bg-black border-2 border-pink-300 items-center my-4 p-2"
+    id="loginForm"
+    action="/profile"
+  >
+    <label>Email</label>
+    <input class="my-2 text-black" name="email" />
+    <br />
+    <label>Contraseña</label>
+    <input class="my-2 text-black" type="password" name="password" />
+    <input class="rounded-full mt-4 mb-2 pt-1 px-3 bg-blue-800" type="submit" />
+  </form>
+  <p class="my-2 py-2">¿No estás registrado? Regístrate
+    <a class="text-pink-300" href="/register">aquí</a></p>
+</div>
+<div class="my-2 py-2 px-4 border-2 border-black rounded-full bg-blue-800"><a
+    href="/api/sessions/github"
+  ><button>Ingresar con GitHub</button></a></div>
+<script src="/js/login.js"></script>

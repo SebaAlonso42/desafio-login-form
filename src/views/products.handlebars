@@ -1,0 +1,43 @@
+<div>
+  <p>Your active cart is : <span id="cartId">{{cartId}}</span></p>
+</div>
+
+<div class="flex flex-row">
+  <div class="mx-auto p-4 m-4 grid grid-cols-3">
+    {{#each data}}
+      <div
+        class="flex flex-col items-center rounded-lg bg-violet-500 border-2 border-pink-300 mx-3 py-4 my-6"
+      >
+        <h2 class="text-3xl font-medium">{{this.title}}</h2>
+        <p class="">{{this.description}}</p>
+        <span class="text-black text-xl">$ {{this.price}}</span>
+        <div class="flex flex-row items-center">
+          <a href="" class="addToCart" id="{{this._id}}"><button
+              class="bg-black rounded-2xl border-2 border-white mx-4 px-2"
+            >add to cart !</button></a>
+          <a href="/product/{{this._id}}"><button
+              class="bg-black rounded-2xl border-2 border-white mx-4 px-2"
+            >More info !</button></a>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
+<div
+  class="bg-indigo-800 rounded-full border-2 border-black mx-auto flex flex-row justify-center p-4 m-4"
+>
+  {{#if hasPrevPage}}
+    <a
+      class="bg-black rounded-lg  px-2 mx-2"
+      href="/products?filter={{filter}}&limit={{limit}}&pageQuery={{prevPage}}&sort={{sort}}"
+    ><button id="prevPage"> Previous</button></a>
+  {{/if}}
+  <p class="bg-black rounded-lg  px-2 mx-2">{{page}}</p>
+  {{#if hasNextPage}}
+    <a
+      class="bg-black rounded-lg  px-2 mx-2"
+      href="/products?filter={{filter}}&limit={{limit}}&pageQuery={{nextPage}}&sort={{sort}}"
+    ><button id="nextPage">Next </button></a>
+  {{/if}}
+</div>
+<script src="/js/products.js"></script>
